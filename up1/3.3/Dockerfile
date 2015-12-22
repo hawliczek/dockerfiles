@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM xataz/alpine:3.3
 MAINTAINER lemark.xyz <bschwartz@lemark.xyz>
 
 
