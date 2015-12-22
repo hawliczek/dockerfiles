@@ -1,39 +1,38 @@
-# DELUGE 
+# Docker Deluge WebUI Container
+_maintained by arckosfr_
 
-## TAG/DOCKERFILE 
+[![](https://badge.imagelayers.io/arckosfr/docker-deluge:latest.svg)](https://imagelayers.io/?images=arckosfr/docker-deluge:latest 'Get your own badge on imagelayers.io')
 
-* 1.3-stable latest [(deluge/1.3-stable/Dockerfile)](https://github.com/xataz/dockerfiles/blob/master/deluge/1.3-stable/Dockerfile)
-* 1.3-stable-filebot filebot [(deluge/1.3-stable-filebot/Dockerfile)](https://github.com/xataz/dockerfiles/blob/master/deluge/1.3-stable-filebot/Dockerfile)
-* 1.4-master [(deluge/1.4-master/Dockerfile)](https://github.com/xataz/dockerfiles/blob/master/deluge/1.4-master/Dockerfile)
-* develop [(deluge/develop/Dockerfile)](https://github.com/xataz/dockerfiles/blob/master/deluge/develop/Dockerfile)
+## What is it
 
-## IMAGE USAGE 
+This Dockerfile (available as ___arckosfr/deluge___) will produce a docker container for the __deluge__ bittorrent client software.
 
-### Environment
-* WEB_ROOT
+View in Docker Registry [arckosfr/deluge](https://hub.docker.com/r/arckosfr/deluge/)
 
-### Volumes
-* /config
-* /data
+View in GitHub [*arckosfr/deluge*(https://github.com/arckosfr/docker-deluge)
 
-### Ports
-* 8112
-* 58846
+Deluge configuration is greatly copied from great work of https://github.com/xataz/dockerfiles/tree/master/deluge
+thank to xataz !
 
-## BUILD IMAGE
+## Envirronement
 
-```shell
-docker build -t xataz/deluge:1.3-stable github.com/xataz/dockerfiles.git#master:deluge/1.3-stable
-```
+* __VER__ = with that you can change the version of deluge wanted (default 1.3-stable)
+* __UID__ = You can change the UID (default 5000)
+* __GID__ = You can change the GID (default 5000)
 
-## PULL IMAGE
 
-```shell
-docker pull xataz/deluge:1.3-stable
-```
+## Volumes
 
-## RUN CONTAINER
+* __/config__
+ * configuration files for deluge
+* __/data__
+ * download directory for torrents
 
-```shell
-docker run -d -p 8112:8112 -v /home/user:/data -v /docker/config/deluge:/config xataz/deluge:1.3-stable
-```
+
+## Running arckosfr/deluge Container
+
+    docker run -d -v /docker/data:/data -v /docker/downloads:/downloads -p 8112:8112 -p 58846:58846 --name deluge arckosfr/deluge
+
+## Running arckosfr/deluge Container with external config
+
+    docker run -d -v /docker/data:/data -v /docker/config:/config -p 8112:8112 -p 58846:58846 --name deluge arckosfr/deluge

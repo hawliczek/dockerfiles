@@ -1,3 +1,0 @@
-#!/bin/sh
-
-sh /home/lemark/.filebot/filebot.sh -script fn:cleaner /data/Media
