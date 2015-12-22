@@ -4,14 +4,14 @@ Conteneur Selfoss basé sur alpine
 
 # Intallation
 ## Installation via docker hub
-``docker pull arckosfr/docker-selfoss``
+``docker pull arckosfr/selfoss``
 
 ## installation via dockerfile
-``git clone https://github.com/arckosfr/docker-selfoss``
+``git clone https://github.com/arckosfr/selfoss``
 
 ``cd docker-selfoss``
 
-``docker build -t arckosfr/docker-selfoss .``
+``docker build -t arckosfr/selfoss .``
 
 
 # Usage
@@ -24,10 +24,10 @@ Conteneur Selfoss basé sur alpine
 
 
 ## Lancement simple
-``docker run -d -p 80:80 arckosfr/docker-selfoss``
+``docker run -d -p 80:80 arckosfr/selfoss``
 
 ## Lancement avec un volume
-``docker run -d -p 80:80 -v /mnt:/var/www/html/data --name selfoss arckosfr/docker-selfoss``
+``docker run -d -p 80:80 -v /mnt:/var/www/html/data --name selfoss arckosfr/selfoss``
 
 ## Bonus : reverse proxy nginx
 ```

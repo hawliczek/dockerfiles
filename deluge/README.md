@@ -1,7 +1,7 @@
 # Docker Deluge WebUI Container
 _maintained by arckosfr_
 
-[![](https://badge.imagelayers.io/arckosfr/docker-deluge:latest.svg)](https://imagelayers.io/?images=arckosfr/docker-deluge:latest 'Get your own badge on imagelayers.io')
+[![](https://badge.imagelayers.io/arckosfr/deluge:latest.svg)](https://imagelayers.io/?images=arckosfr/deluge:latest 'Get your own badge on imagelayers.io')
 
 ## What is it
 
@@ -9,7 +9,7 @@ This Dockerfile (available as ___arckosfr/deluge___) will produce a docker conta
 
 View in Docker Registry [arckosfr/deluge](https://hub.docker.com/r/arckosfr/deluge/)
 
-View in GitHub [*arckosfr/deluge*(https://github.com/arckosfr/docker-deluge)
+View in GitHub [*arckosfr/deluge*(https://github.com/arckosfr/deluge)
 
 Deluge configuration is greatly copied from great work of https://github.com/xataz/dockerfiles/tree/master/deluge
 thank to xataz !
