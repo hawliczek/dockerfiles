@@ -12,6 +12,7 @@ RUN mkdir -p /home/torrent && \
 		build-base \
 		boost-python@3.2 \
 		boost-system@3.2 \
+		ca-certificates \
 		git \
 		libffi \
 		libffi-dev \
@@ -38,7 +39,7 @@ RUN mkdir -p /home/torrent && \
 		six \
 		pyxdg \
 		twisted && \
-    git clone -b ${VER} git@github.com:deluge-torrent/deluge.git && \
+    git clone -b ${VER} https://github.com/deluge-torrent/deluge.git && \
     cd deluge && python setup.py build && python setup.py install && \
     apk del build-base py-pip git libffi-dev openssl-dev python-dev && rm /var/cache/apk/* && \
     rm -R /deluge && cp -R /config /config-bkp && \
