@@ -28,7 +28,7 @@ RUN mkdir -p /home/torrent && \
 		service_identity \
 		setuptools \
 		six \
-		xdg \
+		pyxdg \
 		twisted && \
     git clone -b ${VER} git://deluge-torrent.org/deluge.git && \
     apk del git py-pip && \
