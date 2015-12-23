@@ -9,8 +9,8 @@ RUN mkdir -p /home/torrent && \
     echo "@testing http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk add --update \
 		build-base \
-		boost-python
-		boost-system
+		boost-python \
+		boost-system \
 		git \
 		libffi \
 		libffi-dev \
