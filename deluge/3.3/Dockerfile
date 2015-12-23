@@ -24,7 +24,7 @@ RUN mkdir -p /home/torrent && \
 		cryptography \
 		enum34 \
 		mako \
-		openssl \
+		pyOpenSSL \
 		service_identity \
 		setuptools \
 		six \
