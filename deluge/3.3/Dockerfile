@@ -39,9 +39,8 @@ RUN mkdir -p /home/torrent && \
 		pyxdg \
 		twisted && \
     git clone -b ${VER} git://deluge-torrent.org/deluge.git && \
-    apk del git py-pip && \
     cd deluge && python setup.py build && python setup.py install && \
-    apk del build-base py-pip libffi-dev openssl-dev python-dev && rm /var/cache/apk/* && \
+    apk del build-base py-pip git libffi-dev openssl-dev python-dev && rm /var/cache/apk/* && \
     rm -R /deluge && cp -R /config /config-bkp && \
     chmod a+x /usr/bin/start.sh && mkdir /data && chown torrent:torrent /data
 

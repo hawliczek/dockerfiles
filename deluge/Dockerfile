@@ -9,8 +9,8 @@ RUN mkdir -p /home/torrent && \
     echo "@testing http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk add --update \
 		build-base \
-		boost-python@3.2 \
-		boost-system@3.2 \
+		boost-python
+		boost-system
 		git \
 		libffi \
 		libffi-dev \
@@ -38,9 +38,8 @@ RUN mkdir -p /home/torrent && \
 		pyxdg \
 		twisted && \
     git clone -b ${VER} git://deluge-torrent.org/deluge.git && \
-    apk del git py-pip && \
     cd deluge && python setup.py build && python setup.py install && \
-    apk del build-base py-pip libffi-dev openssl-dev python-dev && rm /var/cache/apk/* && \
+    apk del build-base py-pip libffi-dev openssl-dev python-dev git py-pip && rm /var/cache/apk/* && \
     rm -R /deluge && cp -R /config /config-bkp && \
     chmod a+x /usr/bin/start.sh && mkdir /data && chown torrent:torrent /data
 
