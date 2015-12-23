@@ -1,9 +1,13 @@
 FROM xataz/alpine:3.3
-MAINTAINER lemark.xyz <bschwartz@lemark.xyz>
+MAINTAINER arckosfr <contact@lemark.xyz>
 
 
-RUN apk add --update go@community git && \
-        cd / && git clone https://github.com/Upload/Up1 && cd /Up1 && go build server.go && \
+RUN apk add --update \
+			go@community \
+			git && \
+        cd / && git clone https://github.com/Upload/Up1 && \
+		cd /Up1 && \
+		go build server.go && \
         mv /Up1/server /usr/bin/up1 && \
         apk del git go && rm -rf /var/cache/apk/*
 
