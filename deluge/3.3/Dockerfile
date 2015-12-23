@@ -9,7 +9,7 @@ RUN mkdir -p /home/torrent && \
     echo "@testing http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
 	echo "@3.2 http://dl-3.alpinelinux.org/alpine/v3.2/main" >> /etc/apk/repositories && \
     apk add --update \
-		build-base\
+		build-base \
 		boost-python@3.2 \
 		boost-system@3.2 \
 		git \

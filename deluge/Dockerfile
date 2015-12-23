@@ -8,7 +8,7 @@ RUN mkdir -p /home/torrent && \
     addgroup -g ${GID} torrent && adduser -h /home/torrent -s /bin/sh -D -G torrent -u ${UID} torrent && \
     echo "@testing http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk add --update \
-		build-base\
+		build-base \
 		boost-python@3.2 \
 		boost-system@3.2 \
 		git \
