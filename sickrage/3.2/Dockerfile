@@ -12,7 +12,7 @@ ENV TORRENT_METHOD="rtorrent" UID=5000 GID=5000
 
 RUN addgroup -g ${GID} torrent && adduser -h /home/torrent -s /bin/sh -D -G torrent -u ${UID} torrent && \
 	apk add --update \
-		git && \
+		git \
 		python \
 		py-pip && \
 	pip install 
