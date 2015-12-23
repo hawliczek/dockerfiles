@@ -8,6 +8,7 @@ RUN mkdir -p /home/torrent && \
     addgroup -g ${GID} torrent && adduser -h /home/torrent -s /bin/sh -D -G torrent -u ${UID} torrent && \
     echo "@testing http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk add --update \
+		gcc \
 		git \
 		librsvg \
 		libtorrent-rasterbar@testing \
@@ -16,7 +17,8 @@ RUN mkdir -p /home/torrent && \
 		py-pip \
 		supervisor \
 		xdg-utils && \
-    pip install \
+    pip install --upgrade pip && \
+	pip install \
 		cffi \
 		chardet \
 		cryptography \
@@ -31,7 +33,7 @@ RUN mkdir -p /home/torrent && \
     git clone -b ${VER} git://deluge-torrent.org/deluge.git && \
     apk del git py-pip && \
     cd deluge && python setup.py build && python setup.py install && \
-    rm /var/cache/apk/* && \
+    apk del gcc && rm /var/cache/apk/* && \
     rm -R /deluge && cp -R /config /config-bkp && \
     chmod a+x /usr/bin/start.sh && mkdir /data && chown torrent:torrent /data
 
