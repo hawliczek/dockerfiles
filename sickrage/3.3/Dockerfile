@@ -15,7 +15,7 @@ RUN addgroup -g ${GID} torrent && adduser -h /home/torrent -s /bin/sh -D -G torr
 		git \
 		python \
 		py-pip && \
-	pip install 
+	pip install \
 		cheetah && \
 	git clone https://github.com/SickRage/SickRage.git && chown -R torrent:torrent /SickRage && \
 	apk del py-pip && rm -rf /var/cache/apk/* && \
