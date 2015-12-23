@@ -6,7 +6,7 @@ ENV VER=1.3-stable UID=5000 GID=5000
 ADD fs /
 RUN mkdir -p /home/torrent && \
     addgroup -g ${GID} torrent && adduser -h /home/torrent -s /bin/sh -D -G torrent -u ${UID} torrent && \
-    echo "@ testing http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+    echo "@testing http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk add --update \
 		git \
 		librsvg \
