@@ -1,5 +1,5 @@
 FROM xataz/node:4.2-onbuild
-RUN apk --update add bash wget unzip ca-certificates && \
+RUN apk --update add bash tini wget unzip ca-certificates && \
     wget https://ghost.org/zip/ghost-latest.zip && unzip ghost-latest.zip -d /ghost && \
     rm -f ghost-latest.zip && \
     apk del wget unzip && rm -rf /var/cache/apk/* && \

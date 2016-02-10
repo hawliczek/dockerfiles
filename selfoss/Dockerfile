@@ -21,6 +21,7 @@ RUN apk add --update \
 		php-pdo \
 		php-pdo_sqlite\
 		php-ctype \
+		tini \
 		unzip && \
 	rm -rf /var/cache/apk/* && \
 	mkdir -p /var/www/html && \

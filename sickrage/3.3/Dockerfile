@@ -14,6 +14,7 @@ RUN addgroup -g ${GID} torrent && adduser -h /home/torrent -s /bin/sh -D -G torr
 	apk add --update \
 		git \
 		python \
+		tini \
 		py-pip && \
 	pip install \
 		cheetah && \
