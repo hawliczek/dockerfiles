@@ -15,6 +15,6 @@ VOLUME ["/ghost-override"]
 
 WORKDIR /ghost
 
-CMD ["bash","/start"]
+CMD ["usr/bin/tini","--","/start"]
 
 EXPOSE 2368

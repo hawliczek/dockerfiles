@@ -33,4 +33,4 @@ RUN apk add --update \
 ADD files/selfoss.conf /sites-enabled/
 ADD files/php-fpm.conf /etc/php/
 
-CMD ["/run.sh"]
+CMD ["usr/bin/tini","--","/run.sh"]

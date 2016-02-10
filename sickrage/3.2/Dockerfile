@@ -6,8 +6,7 @@ ADD config.ini /tmp/config.ini
 
 VOLUME [ "/config", "/blackhole", "/torrents"]
 EXPOSE 8081
-CMD ["/usr/bin/start.sh"]
-
+CMD ["usr/bin/tini","--","/usr/bin/start.sh"]
 ENV TORRENT_METHOD="rtorrent" UID=5000 GID=5000
 
 RUN addgroup -g ${GID} torrent && adduser -h /home/torrent -s /bin/sh -D -G torrent -u ${UID} torrent && \

@@ -17,4 +17,4 @@ RUN chmod +x /usr/bin/start.sh
 EXPOSE 80 443
 WORKDIR /Up1
 
-CMD ["/usr/bin/start.sh"]
+CMD ["usr/bin/tini","--","/usr/bin/start.sh"]
