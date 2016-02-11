@@ -4,7 +4,6 @@ RUN apk --update add bash wget git unzip ca-certificates && \
 		cd /Up1/server && \
     apk del wget unzip git && rm -rf /var/cache/apk/* && \
     npm install && \
-    sed 's/127.0.0.1/0.0.0.0/' config.example.js > config.js
 
 ADD start.sh /start.sh
 
