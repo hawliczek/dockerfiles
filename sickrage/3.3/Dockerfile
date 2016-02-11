@@ -1,4 +1,4 @@
-FROM xataz/alpine:3.3
+FROM alpine:3.3-tini
 MAINTAINER arckosfr <contact@lemark.xyz>
 
 ADD start.sh /usr/bin/start.sh
@@ -14,7 +14,6 @@ RUN addgroup -g ${GID} torrent && adduser -h /home/torrent -s /bin/sh -D -G torr
 	apk add --update \
 		git \
 		python \
-		tini@community \
 		py-pip && \
 	pip install \
 		cheetah && \

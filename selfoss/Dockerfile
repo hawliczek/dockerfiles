@@ -21,7 +21,6 @@ RUN apk add --update \
 		php-pdo \
 		php-pdo_sqlite\
 		php-ctype \
-		tini@community \
 		unzip && \
 	rm -rf /var/cache/apk/* && \
 	mkdir -p /var/www/html && \
@@ -34,4 +33,4 @@ RUN apk add --update \
 ADD files/selfoss.conf /sites-enabled/
 ADD files/php-fpm.conf /etc/php/
 
-CMD ["usr/bin/tini","--","/run.sh"]
+CMD ["sh","/run.sh"]

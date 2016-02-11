@@ -4,7 +4,6 @@ MAINTAINER arckosfr <contact@lemark.xyz>
 
 RUN apk add --update \
 			go \
-			tini@community \
 			git && \
         cd / && git clone https://github.com/Upload/Up1 && \
 		cd /Up1 && \
@@ -18,4 +17,4 @@ RUN chmod +x /usr/bin/start.sh
 EXPOSE 80 443
 WORKDIR /Up1
 
-CMD ["usr/bin/tini","--","/usr/bin/start.sh"]
+CMD ["sh","/usr/bin/start.sh"]

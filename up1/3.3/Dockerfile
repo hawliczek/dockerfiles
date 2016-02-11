@@ -1,11 +1,10 @@
-FROM xataz/alpine:3.3
+FROM alpine:3.3-tini
 MAINTAINER arckosfr <contact@lemark.xyz>
 
 
 RUN apk add --update \
 			go@community \
-			git \
-			tini@community && \
+			git && \
         cd / && git clone https://github.com/Upload/Up1 && \
 		cd /Up1 && \
 		go build server.go && \
