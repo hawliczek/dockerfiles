@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ ! -e /Up1/server.conf ]
+if [ ! -e /upload/server/ server.conf ]
 then
         APIKEY=$(date +%s | md5sum | head -c 32)
         sleep 5
@@ -18,4 +18,4 @@ then
 fi
 
 
-up1
+node server.js
