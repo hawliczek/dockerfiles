@@ -1,4 +1,4 @@
-FROM xataz/node:4.2-onbuild
+FROM xataz/node:latest-onbuild
 RUN apk --update add bash wget git unzip ca-certificates && \
         cd / && git clone https://github.com/Upload/Up1 && \
 		cd /upload/server && \
