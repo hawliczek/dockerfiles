@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ ! -e /upload/server/ server.conf ]
+if [ ! -e /Up1/server/ server.conf ]
 then
         APIKEY=$(date +%s | md5sum | head -c 32)
         sleep 5
