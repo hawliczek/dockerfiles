@@ -1,4 +1,4 @@
-FROM alpine:3.3-tini
+FROM xataz/alpine:3.3-tini
 MAINTAINER arckosfr <contact@lemark.xyz>
 
 ADD start.sh /usr/bin/start.sh
