@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ ! -e /Up1/server/ server.conf ]
+if [ ! -e /Up1/server/server.conf ]
 then
         APIKEY=$(date +%s | md5sum | head -c 32)
         sleep 5
@@ -9,7 +9,6 @@ then
         echo $DELETEKEY
 
         sed -re 's/"api_key": "c61540b5ceecd05092799f936e27755f"/"api_key": "'$APIKEY'"/;s/"delete_key": ""/"delete_key": "'$DELETEKEY'"/' server.conf.example > server.conf
-        sed "s/upload.config.api_key = '.*'/upload.config.api_key = '"$APIKEY"'/g" config.js.example > config.js
         
         if [ -f ./certs/cert.pem ] && [ -f ./certs/key.pem ]
         then
