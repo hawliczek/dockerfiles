@@ -5,7 +5,7 @@ MAINTAINER arckosfr <contact@lemark.xyz>
 RUN apk add --update \
 			go@community \
 			git \
-			tini && \
+			tini@community && \
         cd / && git clone https://github.com/Upload/Up1 && \
 		cd /Up1 && \
 		go build server.go && \
