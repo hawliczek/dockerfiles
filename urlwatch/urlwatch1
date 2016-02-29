@@ -2,8 +2,7 @@
 
 boucle=1
 
-while $boucle = 1
-do
-	urlwatch
+while test $boucle = 1
+do  urlwatch
 	sleep 15m
 done
