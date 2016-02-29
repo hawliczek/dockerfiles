@@ -1,4 +1,4 @@
-FROM xataz/alpine:3.3-tini
+FROM xataz/alpine:3.3
 MAINTAINER arckosfr <contact@lemark.xyz>
 
 ENTRYPOINT ["urlwatch"]
