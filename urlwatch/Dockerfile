@@ -1,7 +1,6 @@
 FROM xataz/alpine:3.3
 MAINTAINER arckosfr <contact@lemark.xyz>
 
-ENTRYPOINT ["urlwatch"]
 CMD ["usr/bin/tini","--","startup"]
 VOLUME ["/home/urlwatch/.urlwatch"]
 ENV UID=1000 GID=1000
