@@ -4,4 +4,6 @@ addgroup -g ${GID} urlwatch && adduser -h /home/urlwatch -s /bin/sh -G urlwatch 
 
 chown -R ${UID}:${GID} /home/urlwatch
 
+echo '/15 * * * * GOSU '${GID}':'${GID}' sh -c "urlwatch"' >> /etc/crontab/root
+
 gosu ${UID}:${GID} sh -c "urlwatch"
