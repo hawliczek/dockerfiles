@@ -9,6 +9,7 @@ RUN	apk add --update \
 		python3 \
 		git \
 		ca-certificates \
+		supervisor \
 	&& wget "https://bootstrap.pypa.io/get-pip.py" -O /dev/stdout | python3 \
 	&& pip3 install urlwatch \
 	&& apk del git && rm -rf /var/cache/apk/*

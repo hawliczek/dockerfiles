@@ -6,4 +6,4 @@ chown -R ${UID}:${GID} /home/urlwatch
 
 echo '/15 * * * * GOSU '${GID}':'${GID}' sh -c "urlwatch"' >> /etc/crontab/root
 
-gosu ${UID}:${GID} sh -c "urlwatch"
+gosu ${UID}:${GID} sh -c "supervisord -c /etc/supervisord.conf"
