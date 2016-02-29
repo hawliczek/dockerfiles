@@ -6,4 +6,9 @@ chown -R ${UID}:${GID} /home/urlwatch
 
 echo '/15 * * * * GOSU '${GID}':'${GID}' sh -c "urlwatch"' >> /etc/crontabs/root
 
-supervisord -c /etc/supervisord.conf
+boucle=1
+
+while test $boucle = 1
+do  gosu ${UID}:${GID} sh -c "/usr/bin/urlwatch"
+	sleep 15m
+done
