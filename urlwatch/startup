@@ -1,0 +1,7 @@
+#!/bin/sh
+
+addgroup -g ${GID} urlwatch && adduser -h /home/urlwatch -s /bin/sh -G urlwatch -u ${UID} -D urlwatch
+
+chown -R ${UID}:${GID} /home/urlwatch
+
+gosu ${UID}:${GID} sh -c "urlwatch"
