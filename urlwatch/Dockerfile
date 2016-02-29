@@ -13,6 +13,6 @@ RUN	apk add --update \
 	&& wget "https://bootstrap.pypa.io/get-pip.py" -O /dev/stdout | python3 \
 	&& pip3 install urlwatch \
 	&& apk del git && rm -rf /var/cache/apk/*
-ADD ADD rootfs /
+ADD rootfs /
 ADD startup /usr/bin/startup
 RUN chmod +x /usr/bin/startup
