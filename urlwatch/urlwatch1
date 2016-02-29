@@ -3,6 +3,6 @@
 boucle=1
 
 while test $boucle = 1
-do  /usr/bin/urlwatch
+do  gosu ${UID}:${GID} sh -c "/usr/bin/urlwatch1"
 	sleep 15m
 done
