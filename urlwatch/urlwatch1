@@ -3,6 +3,6 @@
 boucle=1
 
 while test $boucle = 1
-do  urlwatch
+do  /usr/bin/urlwatch
 	sleep 15m
 done
