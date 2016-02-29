@@ -13,3 +13,4 @@ RUN	apk add --update \
 	&& pip3 install urlwatch \
 	&& apk del git && rm -rf /var/cache/apk/*
 ADD startup /usr/bin/startup
+RUN chmod a+x /usr/bin/startup
