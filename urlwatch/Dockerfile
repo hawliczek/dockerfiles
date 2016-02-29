@@ -3,7 +3,7 @@ MAINTAINER arckosfr <contact@lemark.xyz>
 
 ENTRYPOINT ["urlwatch"]
 CMD ["usr/bin/tini","--","startup"]
-VOLUME["/home/urlwatch/.urlwatch"]
+VOLUME ["/home/urlwatch/.urlwatch"]
 ENV UID=1000 GID=1000
 
 RUN	apk add --update \
