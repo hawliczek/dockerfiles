@@ -16,4 +16,4 @@ RUN	apk add --update \
 ADD rootfs /
 ADD startup /usr/bin/startup
 ADD urlwatch1 /usr/bin/urlwatch1
-RUN chmod +x /usr/bin/{startup,urlwatch1}
+RUN chmod +x /usr/bin/startup /usr/bin/urlwatch1
