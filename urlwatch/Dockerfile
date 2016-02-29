@@ -15,4 +15,5 @@ RUN	apk add --update \
 	&& apk del git && rm -rf /var/cache/apk/*
 ADD rootfs /
 ADD startup /usr/bin/startup
-RUN chmod +x /usr/bin/startup
+ADD urlwatch1 /usr/bin/urlwatch1
+RUN chmod +x /usr/bin/{startup,urlwatch1}
