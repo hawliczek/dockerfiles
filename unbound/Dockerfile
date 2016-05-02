@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM xataz/alpine:3.3
 
 RUN apk add --update unbound curl
 RUN rm -rf /var/cache/apk/*
