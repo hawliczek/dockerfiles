@@ -1,7 +1,7 @@
 FROM xataz/nginx:latest
 MAINTAINER arckosfr <contact@lemark.xyz>
 
-ENV UID=991 GID=991 VER=2.14
+ENV UID=991 GID=991 VER=2.15
 EXPOSE 80
 VOLUME /var/www/html/data
 
@@ -28,9 +28,10 @@ RUN apk add --update \
 	cp -R /var/www/html/data /var/www/html/bkp &&\
 	rm /tmp/selfoss-*.zip && \
 	sed -ri 's#max_execution_time = 30#max_execution_time = 300#' /etc/php/php.ini && \
-    chmod +x /run.sh
+    chmod +x /run.sh /etc/periodic/15min/selfoss
 	
-ADD files/selfoss.conf /sites-enabled/
-ADD files/php-fpm.conf /etc/php/
+COPY files/selfoss.conf /sites-enabled/
+COPY files/php-fpm.conf /etc/php/
+COPY files/cron /etc/periodic/15min/selfoss
 
-CMD ["sh","/run.sh"]
+CMD ["tini","--","/run.sh"]
