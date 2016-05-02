@@ -10,7 +10,7 @@ COPY baddomains.sh /etc/periodic/daily/
 RUN chmod +x /etc/periodic/daily/baddomains.sh
 
 COPY entrypoint.sh start.sh /
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /entrypoint.sh /start.sh
 
 ADD unbound.conf /usr/local/etc/unbound/unbound.conf
 RUN chown -R unbound:unbound /usr/local/etc/unbound/
