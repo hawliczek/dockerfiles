@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./start.sh
+./entrypoint.sh
 ./etc/periodic/daily/baddomains.sh
 
 DO_IPV6=${DO_IPV6:-yes}
