@@ -6,7 +6,7 @@ RUN rm -rf /var/cache/apk/*
 RUN mkdir -p /var/cache/unbound && \
     chown unbound:unbound /var/cache/unbound
 
-COPY Baddomains.sh /etc/periodic/daily/
+COPY baddomains.sh /etc/periodic/daily/
 RUN chmod +x /etc/periodic/daily/baddomains.sh
 
 COPY entrypoint.sh start.sh /
