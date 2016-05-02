@@ -7,6 +7,8 @@ VOLUME /var/www/html/data
 
 ADD https://github.com/SSilence/selfoss/releases/download/${VER}/selfoss-${VER}.zip /tmp/
 ADD files/run.sh /
+ADD files/cron /etc/periodic/15min/selfoss
+
 RUN apk add --update \
 		musl \
 		php-fpm \
@@ -32,6 +34,5 @@ RUN apk add --update \
 	
 COPY files/selfoss.conf /sites-enabled/
 COPY files/php-fpm.conf /etc/php/
-COPY files/cron /etc/periodic/15min/selfoss
 
 CMD ["tini","--","/run.sh"]
