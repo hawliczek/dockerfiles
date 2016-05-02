@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ./entrypoint.sh
 ./etc/periodic/daily/baddomains.sh
